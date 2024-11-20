@@ -1,0 +1,14 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  image-classify:
+    lang: python3-flask-debian
+    handler: ./image-classify
+    image: royh1122/image-classify:latest
+    build_arg:
+      TEST_ENABLED: false
+    environment:
+      RAW_BODY: "true"
+
