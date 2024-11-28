@@ -1,4 +1,3 @@
-template
-build
 .secrets
-test/local_test.ipynb
+serverless/template
+serverless/build
