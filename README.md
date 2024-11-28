@@ -1,12 +1,12 @@
 # Comparative Analysis of Serverless and Server-Based Architectures for Image Classification Deployment
 
-This repository contains the implementation of our project comparing serverless and server-based architectures for deploying an image classification model. It demonstrates how to set up and test these architectures using OpenFaaS (serverless) and a Flask-based server (server-based) for a MobileNetV2 model.
+This repository contains the implementation of our project comparing **serverless** and **server-based** architectures for deploying an image classification model. It demonstrates how to set up and test these architectures using **OpenFaaS** (serverless) and a **Flask-based server** (server-based) for a **MobileNetV2** model.
 
 For more details on the project objectives, methodology, results, and analysis, please refer to the **[Project Report](./COMP4651_Group_8_Project_Report.pdf)**.
 
 ---
 
-## Environment Setup
+## ⚙️ Environment Setup
 
 ### 1. Serverless Deployment with OpenFaaS
 
@@ -64,7 +64,6 @@ For more details on the project objectives, methodology, results, and analysis, 
         faas-cli up -f image-classify.yml
         ```
 
----
 
 ### 2. Server-Based Deployment with Flask
 
@@ -84,7 +83,6 @@ For more details on the project objectives, methodology, results, and analysis, 
    python server_api.py
    ```
 
----
 
 ### 3. Exposing the Server with Ngrok
 
@@ -111,7 +109,7 @@ For more details, visit the **[Ngrok Getting Started Guide](https://ngrok.com/do
 
 ---
 
-## Performance Testing
+## 📊 Performance Testing
 
 This section guides you through testing the performance of the serverless and server-based deployments. The provided Jupyter notebook benchmarks key metrics such as latency and throughput to compare the two architectures under varying load conditions.
 
@@ -129,13 +127,13 @@ This section guides you through testing the performance of the serverless and se
 
 ---
 
-## Report
+## 📑 Report
 
 For a detailed discussion of the methodology, results, and observations, please read the **[Project Report](./COMP4651_Group_8_Project_Report.pdf)**.
 
 ---
 
-## Authors
+## 👨‍💻 Authors
 
 - **HUANG, I-wei** (SID: 20824074, ITSC: ihuangaa)
 - **LI, Yu-hsi** (SID: 20819823, ITSC: ylils)
