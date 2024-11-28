@@ -24,45 +24,45 @@ For more details on the project objectives, methodology, results, and analysis, 
    ./setup-openfaas.sh
    ```
    This script automates the following steps:
-   - Starts Minikube.
-   - Installs OpenFaaS using `arkade`.
-   - Sets up port forwarding for the OpenFaaS Gateway.
-   - Logs into OpenFaaS.
-   - Prepares the Python 3 Flask template for function creation.
+   1. Starts Minikube.
+   2. Installs OpenFaaS using `arkade`.
+   3. Sets up port forwarding for the OpenFaaS Gateway.
+   4. Logs into OpenFaaS.
+   5. Prepares the Python 3 Flask template for function creation.
 
 2. **Individual Steps (if the script fails)**:
-   - Start Minikube:
-     ```bash
-     minikube start
-     ```
-   - Install OpenFaaS using `arkade`:
-     ```bash
-     arkade install openfaas
-     ```
-   - Set up port forwarding for the OpenFaaS Gateway:
-     ```bash
-     kubectl port-forward svc/gateway -n openfaas 8080:8080 &
-     export OPENFAAS_URL="http://127.0.0.1:8080"
-     ```
-   - Log into OpenFaaS:
-     ```bash
-     PASSWORD=$(kubectl get secret -n openfaas basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode; echo)
-     echo -n $PASSWORD | faas-cli login --username admin --password-stdin -g $OPENFAAS_URL
-     ```
-   - Pull the Python 3 Flask template:
-     ```bash
-     faas-cli template store pull python3-flask
-     ```
+   1. Start Minikube:
+        ```bash
+        minikube start
+        ```
+   2. Install OpenFaaS using `arkade`:
+        ```bash
+        arkade install openfaas
+        ```
+   3. Set up port forwarding for the OpenFaaS Gateway:
+        ```bash
+        kubectl port-forward svc/gateway -n openfaas 8080:8080 &
+        export OPENFAAS_URL="http://127.0.0.1:8080"
+        ```
+   4. Log into OpenFaaS:
+        ```bash
+        PASSWORD=$(kubectl get secret -n openfaas basic-auth -o jsonpath="{.data.basic-auth-password}" | base64 --decode; echo)
+        echo -n $PASSWORD | faas-cli login --username admin --password-stdin -g $OPENFAAS_URL
+        ```
+   5. Pull the Python 3 Flask template:
+        ```bash
+        faas-cli template store pull python3-flask
+        ```
 
 3. **Build and Deploy the Function**:
-   - Log in to Docker:
-     ```bash
-     docker login
-     ```
-   - Build, push, and deploy the function using the provided YAML file:
-     ```bash
-     faas-cli up -f image-classify.yml
-     ```
+   1. Log in to Docker:
+        ```bash
+        docker login
+        ```
+   2. Build, push, and deploy the function using the provided YAML file:
+        ```bash
+        faas-cli up -f image-classify.yml
+        ```
 
 ---
 
